@@ -32,16 +32,101 @@
   <div class="bg-glow bg-glow-2"></div>
   <div class="bg-glow bg-glow-3"></div>
 
-  <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div class="logo-wrapper">
+  <!-- A. LANDING PAGE SECTION -->
+  <div id="landingPage" class="landing-container">
+    <div class="landing-content glass">
+      <div class="logo-wrapper large-logo">
         <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="logo-text">動態資料校對專家</span>
+        <span class="logo-text">Dynamic Data Proofreader</span>
       </div>
-      <h1 class="main-title">動態資料校對工具 <span class="badge">v1.1.0 (多模態 OCR 版)</span></h1>
+
+      <h1 class="landing-title">極度精確 • 冷靜客觀<br><span class="gradient-text">AI 多模態數據校對專家</span></h1>
+      <p class="landing-subtitle">
+        專為大規模資料輸入、條碼掃描、發票與產品序號輸入設計的精密比對工具。<br>
+        <strong>100% 本地端離線運算</strong>，支援照片 OCR、Excel、PDF 拖曳載入，自動對齊跳號並消除字元混淆！
+      </p>
+
+      <div class="landing-actions">
+        <button id="btnStartApp" class="btn btn-primary btn-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          進入校對工作區
+        </button>
+        <button id="btnOpenSkill" class="btn btn-secondary btn-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          檢視工作流 Skill
+        </button>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="feature-grid">
+        <div class="feature-card glass">
+          <div class="feat-icon-wrapper feat-purple">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+          </div>
+          <h3>多模態直接拖曳</h3>
+          <p>支援 TXT、CSV、Excel 與 PDF 拖曳載入，免去手動貼上。</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feat-icon-wrapper feat-green">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h3>離線相片 OCR</h3>
+          <p>本機 Worker 文字辨識，資料不上雲端，機密防護最安全。</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feat-icon-wrapper feat-blue">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>序列自動對齊</h3>
+          <p>動態規劃對齊演算法，自動對齊跳號並回歸，杜絕連鎖誤判。</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feat-icon-wrapper feat-orange">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <h3>形似字元比對</h3>
+          <p>精精密查核 0/O, 1/I, 8/B, 2/Z, 5/S 等易看錯的手打失誤。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. APP WORKSPACE SECTION (Hidden initially) -->
+  <div id="appWorkspace" class="app-container hidden">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-top-row">
+        <button id="btnBackHome" class="btn-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="back-icon">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          返回首頁
+        </button>
+        <div class="logo-wrapper">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text">動態資料校對專家</span>
+        </div>
+      </div>
+      <h1 class="main-title">動態資料校對工作區 <span class="badge">v1.2.0</span></h1>
       <p class="subtitle">極度精確的資料比對引擎。支援**圖片 OCR、PDF、Excel、TXT 與 CSV 拖曳上傳**。自動對齊跳號缺漏，深度查核相似字元與重複項。</p>
     </header>
 
@@ -249,6 +334,44 @@ SN-2026-003..." rows="8"></textarea>
     <footer class="app-footer">
       <p>© 2026 動態資料校對專家 | 本地高隱私 OCR 與檔案解析比對</p>
     </footer>
+  </div>
+
+  <!-- C. SKILL MANUAL MODAL OVERLAY -->
+  <div id="skillModal" class="modal-overlay hidden">
+    <div class="modal-content glass">
+      <div class="modal-header">
+        <h2 class="modal-title">動態資料校對專家 Skill 說明文件</h2>
+        <button id="btnCloseSkill" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body skill-doc-content">
+        <h3>📌 1. 角色與使命 (Role & Mission)</h3>
+        <p>極度精確、冷靜且客觀的「動態資料校對專家」。支援多模態輸入，透過前端本地 OCR 與檔案解析提取內容，不預設固定的 Regex，自動分析變動欄位規律建立標準錨點，完美找出序號的格式錯誤、跳號缺漏與重複登錄。</p>
+
+        <h3>📌 2. 核心校對流程 (Core Pipeline)</h3>
+        <div class="skill-pipeline">
+          <div class="pipeline-step">
+            <h4>建立動態基準 (Ground Truth)</h4>
+            <p>用戶提供的第一個輸入為「唯一正確範本」，支援 Excel、PDF 掃描或 PNG/JPG 相片。由系統透過視覺/OCR 能力完整提取內容並定義基準序列特徵。</p>
+          </div>
+          <div class="pipeline-step">
+            <h4>深度掃描與自動對齊</h4>
+            <p>使用序列比對最佳化演算法（動態規劃）對齊，能完美辨識缺漏，後續行自動精密對齊以防連鎖位移誤判。</p>
+          </div>
+          <div class="pipeline-step">
+            <h4>字元級形似比對</h4>
+            <p>深度核查 0/O、1/I/l、8/B、2/Z、5/S 等極難看出的形似混淆錯誤，並產出易讀的中文錯誤描述。</p>
+          </div>
+        </div>
+
+        <h3>📌 3. 本地隱私技術細節 (Privacy & Tech Stack)</h3>
+        <p>為了企業極敏感數據的完全隱私防護，本系統 100% 離線運行，解析技術全部在前端瀏覽器環境執行：</p>
+        <ul>
+          <li><strong>SheetJS (XLSX)</strong>：解析 Excel 中的序列格。</li>
+          <li><strong>PDF.js (Mozilla)</strong>：本地讀取與解析 PDF 文件。</li>
+          <li><strong>Tesseract.js (Local OCR)</strong>：調用瀏覽器 Worker 多線程執行本地圖片文字 OCR 辨識，資料完全不上傳。</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <!-- Toast Notification -->
